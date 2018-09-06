@@ -15,3 +15,12 @@ for d in data:
 
 print('每筆留言的平均長度為', sun_len/len(data))
 
+# 篩選留言小於100
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print('一共有', len(new), '筆留言長度小於100')
+print(new[0])
+print(new[1])
+
