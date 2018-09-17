@@ -1,12 +1,15 @@
-# 讀取檔案+計數
+import time
+import progressbar
+
+# 讀取檔案+計數+動態顯示進度
 data = []
 count = 0
+bar = progressbar.ProgressBar(max_value=1000000)
 with open('reviews.txt', 'r') as f:
     for line in f:
         data.append(line)
         count += 1 # count = count + 1
-        if count % 1000 ==0:
-            print(len(data))
+        bar.update(count)
 print('檔案讀取完了，總共有', len(data), '筆資料')
 
 # 算平均留言長度
